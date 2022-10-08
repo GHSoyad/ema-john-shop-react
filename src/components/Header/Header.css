@@ -1,0 +1,11 @@
+.header {
+    background-color: #183153;
+}
+
+.header-nav {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 20px 0;
+}
