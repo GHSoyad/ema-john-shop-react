@@ -6,9 +6,18 @@
 
 .app {
   font-size: 16px;
+  color: #183153;
 }
 
 a {
   text-decoration: none;
   font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.primary {
+  color: orangered;
 }

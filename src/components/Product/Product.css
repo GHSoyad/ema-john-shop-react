@@ -3,5 +3,41 @@
     flex-direction: column;
     border: 1px solid orangered;
     border-radius: 10px;
+    justify-content: space-between;
+}
+
+.product-name {
+    padding: 15px;
+}
+
+.product img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.product-price {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.product button {
+    margin: 20px 15px;
+    width: calc(100% - 30px);
     padding: 10px;
+    background-color: #ff990080;
+    border: 1px solid #ff990080;
+    font-weight: bold;
+    color: #183153;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: orangered;
+    border: 1px solid orangered;
+    font-weight: bold;
+    color: white;
 }
