@@ -7,10 +7,10 @@ const Header = () => {
             <nav className='header-nav'>
                 <img src="images/Logo.svg" alt="" />
                 <div className='header-links'>
-                    <a href="#">Shop</a>
-                    <a href="#">Orders</a>
-                    <a href="#">Inventory</a>
-                    <a href="#">About</a>
+                    <a href="/">Shop</a>
+                    <a href="/">Orders</a>
+                    <a href="/">Inventory</a>
+                    <a href="/">About</a>
                 </div>
             </nav>
         </div>

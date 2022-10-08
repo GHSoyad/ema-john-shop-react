@@ -7,5 +7,25 @@
     max-width: 1200px;
     margin: 0 auto;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 0;
+}
+
+.header-links {
+    display: flex;
+    gap: 30px;
+}
+
+.header-links a {
+    color: white;
+}
+
+.header-links a:hover {
+    color: orangered;
+}
+
+@media screen and (max-width: 1200px) {
+    .header-nav {
+        padding: 20px;
+    }
 }
