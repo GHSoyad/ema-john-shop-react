@@ -24,6 +24,10 @@
     color: orangered;
 }
 
+.header-links .active {
+    color: orangered;
+}
+
 @media screen and (max-width: 1200px) {
     .header-nav {
         padding: 20px;

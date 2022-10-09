@@ -20,11 +20,13 @@
     display: flex;
     justify-content: space-between;
     padding: 0 15px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .product button {
-    margin: 20px 10px;
-    width: calc(100% - 20px);
+    margin: 20px 15px;
+    width: calc(100% - 30px);
     padding: 10px;
     background-color: #ff990080;
     border: 1px solid #ff990080;
@@ -40,4 +42,11 @@
     border: 1px solid orangered;
     font-weight: bold;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .product-name {
+        padding: 15px;
+        font-size: 14px;
+    }
 }
