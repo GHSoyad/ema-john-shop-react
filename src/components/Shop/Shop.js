@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { saveToLocalStorage, getSavedCart } from '../../utilities/localStorage';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
-import './Shop.css'
+import './Shop.css';
 
 const Shop = () => {
 
@@ -14,9 +15,39 @@ const Shop = () => {
             .then(data => setProducts(data))
     }, [])
 
-    const addToCart = product => {
-        const newCart = [...cart, product];
+    useEffect(() => {
+        const savedCart = getSavedCart();
+        const getCartItems = [];
+        for (const id in savedCart) {
+            const cartItem = products.find(product => product.id === id);
+            if (cartItem) {
+                cartItem.quantity = savedCart[id];
+                getCartItems.push(cartItem);
+            }
+        }
+        setCart(getCartItems);
+    }, [products])
+
+
+    const addToCart = selectedProduct => {
+
+        const addedProduct = cart.find(product => product.id === selectedProduct.id)
+        let newCart = [];
+        console.log(addedProduct)
+
+        if (!addedProduct) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct]
+        } else {
+            const remainingProducts = cart.filter(product => product.id !== selectedProduct.id);
+            selectedProduct.quantity = addedProduct.quantity + 1;
+            newCart = [...remainingProducts, selectedProduct];
+        }
+
+        console.log(newCart)
+
         setCart(newCart);
+        saveToLocalStorage(selectedProduct);
     }
 
     return (
