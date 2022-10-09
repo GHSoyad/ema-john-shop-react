@@ -2,3 +2,11 @@
     background-color: #ff990080;
     padding: 40px 20px;
 }
+
+.inner-cart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 40px;
+}

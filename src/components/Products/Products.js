@@ -2,12 +2,12 @@ import React from 'react';
 import Product from '../Product/Product';
 import './Products.css'
 
-const Products = ({ products }) => {
+const Products = ({ products, addToCart }) => {
 
     return (
         <div className='products'>
             {
-                products.map(product => <Product product={product} key={product.id}></Product>)
+                products.map(product => <Product product={product} key={product.id} addToCart={addToCart}></Product>)
             }
         </div>
     );

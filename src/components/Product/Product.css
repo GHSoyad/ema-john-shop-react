@@ -23,8 +23,8 @@
 }
 
 .product button {
-    margin: 20px 15px;
-    width: calc(100% - 30px);
+    margin: 20px 10px;
+    width: calc(100% - 20px);
     padding: 10px;
     background-color: #ff990080;
     border: 1px solid #ff990080;

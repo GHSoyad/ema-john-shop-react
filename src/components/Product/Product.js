@@ -1,9 +1,9 @@
 import React from 'react';
+import { Rating } from 'react-simple-star-rating';
 import './Product.css'
 
-const Product = (props) => {
-
-    const { name, img, price, ratings } = props.product;
+const Product = ({ product, addToCart }) => {
+    const { name, img, price, ratings } = product;
     return (
         <div className='product'>
             <div className='product-info'>
@@ -16,9 +16,9 @@ const Product = (props) => {
             <div>
                 <div className='product-price'>
                     <p><span className='bold'>Price: $</span>{price}</p>
-                    <p><span className='bold'>Rating: </span>{ratings}</p>
+                    <Rating initialValue={ratings} readonly={true} size={18} allowFraction={true} />
                 </div>
-                <button>Add to Cart</button>
+                <button onClick={() => addToCart(product)}>Add to Cart</button>
             </div>
         </div>
     );
