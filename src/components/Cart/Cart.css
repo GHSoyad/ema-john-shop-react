@@ -11,3 +11,28 @@
     position: sticky;
     top: 40px;
 }
+
+.cart button {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.clear-cart {
+    background-color: rgba(220, 20, 60, 0.7);
+    color: white;
+}
+
+.clear-cart:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.review-order:hover {
+    background-color: orangered;
+    color: white;
+}

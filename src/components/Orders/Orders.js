@@ -3,8 +3,9 @@ import './Orders.css'
 
 const Orders = () => {
     return (
-        <div>
-            This is orders
+        <div className='review-orders-container'>
+            <div className='review-items'>items</div>
+            <div className='review-price'>calculation</div>
         </div>
     );
 };

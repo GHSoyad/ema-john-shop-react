@@ -40,7 +40,6 @@
 .product button:hover {
     background-color: orangered;
     border: 1px solid orangered;
-    font-weight: bold;
     color: white;
 }
 

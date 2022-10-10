@@ -25,4 +25,8 @@ const getSavedCart = () => {
     return savedCart;
 }
 
-export { saveToLocalStorage, getSavedCart };
+const clearLocalStorage = () => {
+    localStorage.removeItem('cart-items');
+}
+
+export { saveToLocalStorage, getSavedCart, clearLocalStorage };

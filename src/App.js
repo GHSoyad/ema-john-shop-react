@@ -13,10 +13,12 @@ function App() {
       children: [
         {
           path: '/',
+          loader: () => fetch('products.json'),
           element: <Shop></Shop>
         },
         {
           path: '/shop',
+          loader: () => fetch('products.json'),
           element: <Shop></Shop>
         },
         {
@@ -26,12 +28,12 @@ function App() {
         {
           path: '/inventory',
           element: <Inventory></Inventory>
+        },
+        {
+          path: '*',
+          element: <div>Not found, go to <Link to='/shop'>Shop</Link></div>
         }
       ]
-    },
-    {
-      path: '*',
-      element: <div>Not found, go to <Link to='/shop'>Shop</Link></div>
     }
   ])
 
