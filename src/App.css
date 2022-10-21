@@ -21,3 +21,41 @@ a {
 .primary {
   color: orangered;
 }
+
+button {
+  padding: 8px;
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: orangered;
+  color: white;
+}
+
+button:disabled {
+  background-color: rgba(169, 169, 169, 0.2);
+  color: gray;
+  cursor: default;
+}
+
+button:disabled:hover {
+  background-color: rgba(169, 169, 169, 0.2);
+  color: gray;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.success:hover {
+  background-color: limegreen;
+}
+
+.fail:hover {
+  background-color: crimson;
+}

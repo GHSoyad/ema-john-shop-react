@@ -1,7 +1,16 @@
+const getSavedCart = () => {
+    let savedCart = localStorage.getItem('cart-items');
+
+    if (savedCart) {
+        savedCart = JSON.parse(savedCart);
+    } else {
+        savedCart = {};
+    }
+    return savedCart;
+}
+
 const saveToLocalStorage = (product) => {
-
     const savedCart = getSavedCart();
-
     const quantity = savedCart[product.id];
 
     if (quantity) {
@@ -14,15 +23,12 @@ const saveToLocalStorage = (product) => {
     localStorage.setItem('cart-items', JSON.stringify(savedCart));
 }
 
-const getSavedCart = () => {
-    let savedCart = localStorage.getItem('cart-items');
+const updateLocalStorageQuantity = (id, quantity) => {
+    const savedCart = getSavedCart();
 
-    if (savedCart) {
-        savedCart = JSON.parse(savedCart);
-    } else {
-        savedCart = {};
-    }
-    return savedCart;
+    savedCart[id] = quantity;
+
+    localStorage.setItem('cart-items', JSON.stringify(savedCart));
 }
 
 const removeFromLocalStorage = (id) => {
@@ -40,4 +46,4 @@ const clearLocalStorage = () => {
     localStorage.removeItem('cart-items');
 }
 
-export { saveToLocalStorage, getSavedCart, removeFromLocalStorage, clearLocalStorage };
+export { saveToLocalStorage, getSavedCart, updateLocalStorageQuantity, removeFromLocalStorage, clearLocalStorage };

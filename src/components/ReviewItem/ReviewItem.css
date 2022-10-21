@@ -2,7 +2,14 @@
     display: flex;
     border: 1px solid #183153;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-item-details {
+    display: flex;
     gap: 20px;
 }
 
@@ -10,4 +17,35 @@
     width: 100%;
     max-width: 140px;
     border-radius: 5px;
+}
+
+.review-item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.item-counter {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-counter button {
+    display: flex;
+    gap: 5px;
+    padding: 7px 10px;
+    width: unset;
+}
+
+.btn-delete {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding: 5px 0 0;
+    border-radius: 50%;
+    color: crimson;
+    border: none;
+    background-color: rgba(220, 20, 60, 0.1);
 }
