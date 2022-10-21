@@ -3,4 +3,10 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 280px;
+    gap: 40px;
+}
+
+
+.review-items {
+    margin: 60px 0;
 }

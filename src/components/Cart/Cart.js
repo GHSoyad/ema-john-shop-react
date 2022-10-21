@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Cart.css'
 
-const Cart = ({ cart, clearCart }) => {
+const Cart = ({ cart, clearCart, children }) => {
     const quantity = cart.reduce((a, b) => a + b.quantity, 0);
     let total = 0;
     for (const item of cart) {
@@ -21,7 +20,7 @@ const Cart = ({ cart, clearCart }) => {
                 <p><span className='bold'>Shipping: </span>${shipping}</p>
                 <p><span className='bold'>Grand Total: </span>${grandTotal}</p>
                 <button onClick={clearCart} className='clear-cart'>Clear Cart</button>
-                <Link to='/orders'><button className='review-order'>Review Order</button></Link>
+                {children}
             </div>
         </div>
     );

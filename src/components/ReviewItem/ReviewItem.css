@@ -1,0 +1,13 @@
+.review-item {
+    display: flex;
+    border: 1px solid #183153;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 20px;
+}
+
+.review-item img {
+    width: 100%;
+    max-width: 140px;
+    border-radius: 5px;
+}

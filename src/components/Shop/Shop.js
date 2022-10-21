@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { saveToLocalStorage, getSavedCart, clearLocalStorage } from '../../utilities/localStorage';
 import Cart from '../Cart/Cart';
 import Products from '../Products/Products';
@@ -27,7 +27,6 @@ const Shop = () => {
     const addToCart = selectedProduct => {
         const addedProduct = cart.find(product => product.id === selectedProduct.id)
         let newCart = [];
-        console.log(addedProduct)
         if (!addedProduct) {
             selectedProduct.quantity = 1;
             newCart = [...cart, selectedProduct]
@@ -50,7 +49,7 @@ const Shop = () => {
     return (
         <div className='shop'>
             <Products products={products} addToCart={addToCart}></Products>
-            <Cart cart={cart} clearCart={clearCart}></Cart>
+            <Cart cart={cart} clearCart={clearCart}><Link to='/orders'><button className='review-order'>Review Order</button></Link></Cart>
         </div>
     );
 };
