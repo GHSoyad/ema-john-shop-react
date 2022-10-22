@@ -7,6 +7,7 @@ const ReviewItem = ({ cartItem, handleRemoveItem, handleItemCounter }) => {
     // if (quantity === 0) {
     //     handleRemoveItem(id);
     // }
+    const totalPrice = price * quantity;
 
     return (
         <div className='review-item'>
@@ -20,6 +21,7 @@ const ReviewItem = ({ cartItem, handleRemoveItem, handleItemCounter }) => {
                         <p className='bold'>{quantity}</p>
                         <button className='fail' id={id} onClick={() => handleItemCounter(id, false)} disabled={quantity === 0 ? true : false}><FaMinus></FaMinus></button>
                     </div>
+                    <p className='bold'>Total Price: ${totalPrice}</p>
                 </div>
             </div>
             <button onClick={() => handleRemoveItem(id)} className='btn-delete'><FaTrashAlt></FaTrashAlt></button>

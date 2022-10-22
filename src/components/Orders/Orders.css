@@ -13,3 +13,14 @@
     margin: 60px 0;
     gap: 20px;
 }
+
+.sort-select {
+    position: relative;
+    padding: 10px 15px;
+    border: 1px solid #183153;
+    font-size: 16px;
+}
+
+.sort-select:focus {
+    outline: none;
+}
