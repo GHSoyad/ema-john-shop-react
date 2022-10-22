@@ -12,7 +12,10 @@ const ReviewItem = ({ cartItem, handleRemoveItem, handleItemCounter }) => {
     return (
         <div className='review-item'>
             <div className='review-item-details'>
-                <img src={img} alt=""></img>
+                <img src={img} alt="" onError={e => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = 'images/no-image.png'
+                }} />
                 <div className='review-item-info'>
                     <h4>{name}</h4>
                     <p className='bold'>Price: ${price}</p>
