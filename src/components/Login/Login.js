@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import './login.css'
 
 const Login = () => {
+    const { user } = useContext(AuthContext);
+    console.log(user)
+
     return (
         <form className='loginForm'>
             <h1>Login Here</h1>
@@ -16,7 +21,7 @@ const Login = () => {
                 <br />
                 <input type="password" name="password" />
             </div>
-            <button>Login</button>
+            <button>LOGIN</button>
             <p>Don't have an Account? <Link to='/register'>Register!</Link></p>
         </form>
     );

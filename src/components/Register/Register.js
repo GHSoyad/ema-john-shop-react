@@ -1,9 +1,47 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
+
+    const handleRegistration = (event) => {
+        event.preventDefault();
+        const formData = event.target;
+        // const name = formData.name.value;
+        const email = formData.email.value;
+        const password = formData.password.value;
+
+        // Check if password has uppercase letter
+        if (!/(?=.*[A-Z])/.test(password)) {
+            alert('Password must contain a UpperCase Letter');
+            return;
+        }
+        // Check if password has lowercase letter
+        if (!/(?=.*[a-z])/.test(password)) {
+            alert('Password must contain a LowerCase Letter');
+            return;
+        }
+        // Check if password has digit letter
+        if (!/(?=.*[0-9])/.test(password)) {
+            alert('Password must contain a Digit');
+            return;
+        }
+
+        createUser(email, password)
+            .then(userCredential => {
+                const user = userCredential.user;
+                console.log(user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+
     return (
-        <form className='loginForm'>
+        <form onSubmit={handleRegistration} className='loginForm'>
             <h1>Register Here</h1>
             <div>
                 <label htmlFor="name">Your Name</label>
@@ -20,7 +58,7 @@ const Register = () => {
                 <br />
                 <input type="password" name="password" />
             </div>
-            <button>Login</button>
+            <button>REGISTER</button>
             <p>Already have an Account? <Link to='/login'>Login!</Link></p>
         </form>
     );
